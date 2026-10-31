@@ -6,23 +6,28 @@
 
 html {
   font-family: sans-serif;
-  color: antiquewhite;
-  background-image: radial-gradient(circle at top left, rgb(100, 95, 85) 0%, rgb(45, 43, 40) 35%, rgb(19, 19, 19) 75%);
+  color: #eae2e0;
+  background: linear-gradient(to bottom right, #272b36 0%, #17191d 45%, #0b0c0f 100%);
+  /*background-image: radial-gradient(circle at top left, rgb(100, 95, 85) 0%, rgb(45, 43, 40) 35%, rgb(19, 19, 19) 75%);*/
+
+  scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
+  position: relative;
 }
 
-/* barra de navegacion: espaciado, padding, color, hover*/
+/* barra de navegacion: espaciado, padding, color, hover (todas las paginas)*/
 nav {
   display: flex;
   gap: 25px;
   padding: 20px;
+  background-color: rgba(71, 71, 97, 0.19);
 }
 
 nav a {
-  color: antiquewhite;
+  color: #eae2e0;
 
   cursor: pointer;
   font-size: 20px;
@@ -31,14 +36,16 @@ nav a {
 }
 
 nav a:hover {
-  color: rgb(230, 154, 54);
+  color: #e53935;
 }
 
 #a-contacto {
   margin-left: auto;
 }
 
-/* titulo de la pagina, centrado, tamaño de textos (h1 y p), margen/espaciado, hover */
+/*===============PAGINA PRINCIPAL=================*/
+
+/* logotipo-titulo, centrado, tamaño de textos (h1 y p), margen/espaciado, hover */
 #bienvenida {
   margin-top: 90px;
   margin-bottom: 40px;
@@ -46,21 +53,22 @@ nav a:hover {
 }
 
 #bienvenida h1 {
-  font-family: sans-serif;
-  font-size: 100px;
+  font-family: "Unbounded", serif;
+  font-weight: 900;
+
+  font-size: 90px;
   transition: 0.7s ease;
   width: max-content;
   margin: auto;
 }
 
 #bienvenida h1:hover {
-  color: rgb(255, 214, 138);
   transform: scale(1.015); /*transform no modifica el espacio que el elemento ocupa, a diferencia de text-size*/
 }
 
 #bienvenida p {
   font-size: 20px;
-  color: rgba(250, 235, 215, 0.524);
+  color: #eae2e08e;
 }
 
 /* seccion de las tarjetas <a>*/
@@ -75,7 +83,7 @@ nav a:hover {
 }
 
 .tarjeta {
-  background-color: rgba(250, 235, 215, 0.067);
+  background-color: #35373d6f;
   text-align: center;
 
   padding: 45px 15px;
@@ -86,7 +94,7 @@ nav a:hover {
   flex: 1;
 
   text-decoration: none;
-  color: antiquewhite;
+  color: #eae0e0;
 
   transition: 0.5s ease;
 }
@@ -98,14 +106,12 @@ nav a:hover {
 
 .tarjeta p {
   font-size: 18px;
-  color: rgba(250, 235, 215, 0.524);
+  color: #eae0e08e;
 }
 
 .tarjeta:hover {
-  background-color: rgba(250, 235, 215, 0.174);
+  background-color: #35373dfd;
   transform: scale(1.03);
-
-  color: rgb(249, 236, 219);
 }
 
 /*carrusel*/
@@ -114,6 +120,8 @@ nav a:hover {
   margin: 50px auto;
   padding: 50px;
 
+  border-top: 1px solid rgba(128, 128, 128, 0.068);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -121,8 +129,8 @@ nav a:hover {
 }
 
 #carrusel h2 {
-  font-size: 40px;
-  padding: 30px;
+  font-size: 35px;
+  margin-bottom: 20px;
 }
 
 #carruselImagenes {
@@ -178,6 +186,63 @@ nav a:hover {
   top: 45%;
 }
 
+/*footer, posicionamiento, contenido (todas las paginas)*/
+footer {
+  position: relative;
+  bottom: 0;
+
+  padding: 20px;
+  margin-top: 90px;
+  background-color: rgba(88, 88, 88, 0.13);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+footer p {
+  opacity: 50%;
+}
+
+/*===============PAGINA NOTICIAS=================*/
+
+/* titulo de la seccion noticias */
+#noticias h2 {
+  text-align: center;
+  font-size: 35px;
+  margin: 50px;
+}
+
+/*contenedor de las noticias*/
+#contenedor-noticias {
+  max-width: 1200px;
+
+  margin: 20px auto;
+  padding: 0 30px;
+
+  display: flex;
+  gap: 30px;
+}
+
+.noticia {
+  background-color: rgba(88, 88, 88, 0.13);
+  border-radius: 10px;
+
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  flex: 1;
+}
+
+.noticia img {
+  aspect-ratio: 16/9;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/*media query pagina principal*/
 @media (max-width: 768px) {
   .tarjetas {
     margin-bottom: 1000px auto;

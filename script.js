@@ -7,9 +7,26 @@ let indice = 0;
 const imagenes = [
     "./img/MV.png",
     "./img/FC.png",
-    "./img/VB.png",
+    "./img/OP.png",
+    "./img/KA.png",
     "./img/LN.png",
+    "./img/GR.png",
+    "./img/AA.png",
+    "./img/EO.png",
+    "./img/OB.png",
+    "./img/LL.png",
+    "./img/LH.png",
+    "./img/AL.png",
+    "./img/NH.png",
+    "./img/VB.png",
     "./img/SP.png",
+    "./img/PG.png",
+    "./img/GB.png",
+    "./img/IH.png",
+    "./img/LC.png",
+    "./img/CS.png",
+    "./img/FA.png",
+    "./img/CL.png",
 ]
 
 
