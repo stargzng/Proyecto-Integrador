@@ -22,26 +22,43 @@ body {
 nav {
   display: flex;
   gap: 25px;
-  padding: 20px;
+  padding: 18px;
   background-color: rgba(86, 86, 117, 0.08);
+
+  font-family: "Outfit", sans-serif;
 }
 
 nav a {
   color: #eae2e0;
 
   cursor: pointer;
-  font-size: 22px;
+  font-size: 20px;
+  font-family: "Outfit";
   text-decoration: none;
   transition: 0.25s;
+
+  position: relative;
 }
 
 nav a:hover {
-  color: #df0400;
-  transform: scale(1.03);
+  color: #ff0000;
+  transform: scale(1.01);
 }
 
 #a-contacto {
   margin-left: auto;
+}
+
+.marcador:after {
+  content: "";
+  width: 100%;
+  height: 5px;
+
+  border-radius: 0px;
+  background-color: #df0400;
+
+  position: absolute;
+  top: 20px;
 }
 
 /*===============PAGINA PRINCIPAL=================*/
@@ -54,7 +71,7 @@ nav a:hover {
 }
 
 #bienvenida h1 {
-  font-family: "Unbounded", serif;
+  font-family: "Unbounded", sans-serif;
   font-weight: 900;
 
   font-size: 90px;
@@ -72,9 +89,10 @@ nav a:hover {
   color: #eae2e08e;
 }
 
-#rojo {
+.rojo {
   color: #df0400;
 }
+
 /* seccion de las tarjetas <a>*/
 .tarjetas {
   max-width: 1200px;
@@ -89,7 +107,7 @@ nav a:hover {
 }
 
 .tarjeta {
-  max-width: 370px;
+  max-width: 350px;
   min-width: 300px;
 
   background-color: #35373d6f;
@@ -142,8 +160,27 @@ nav a:hover {
 }
 
 #carrusel h2 {
-  font-size: 35px;
-  margin-bottom: 20px;
+  font-size: 40px;
+  margin: 20px 0px 30px 0px;
+
+  position: relative;
+}
+
+#carrusel h2::before {
+  content: "";
+  width: 100px;
+  height: 5px;
+
+  border-radius: 10px;
+  background-color: red;
+
+  box-shadow: red 0px 0px 50px;
+
+  position: absolute;
+  bottom: 60px;
+
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #carruselImagenes {
@@ -164,7 +201,11 @@ nav a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.5s ease;
+  transition: 0.7s ease;
+}
+
+#carruselImagenes img:hover {
+  transform: scale(1.05);
 }
 
 /*botones del carrusel*/
@@ -181,6 +222,7 @@ nav a:hover {
   color: antiquewhite;
 
   transition: 0.5s;
+  z-index: 1;
 }
 
 #carruselImagenes button:hover {
@@ -236,9 +278,28 @@ footer a:hover {
 /*contenedor de las noticias*/
 #noticias > h2 {
   text-align: center;
-  font-size: 45px;
+  font-size: 40px;
   padding-top: 30px;
   padding-bottom: 30px;
+
+  position: relative;
+
+  display: block;
+}
+
+#noticias > h2::before {
+  content: "";
+  width: 180px;
+  height: 5px;
+  border-radius: 5px;
+
+  background: linear-gradient(to right, red, rgb(134, 0, 0));
+
+  position: absolute;
+  top: 80px;
+
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #contenedor-noticias {
@@ -316,6 +377,112 @@ footer a:hover {
   position: absolute;
   bottom: 10px;
   right: 15px;
+}
+
+/*================= FORMULARIO =================*/
+
+.titulo {
+  text-align: center;
+  font-size: 40px;
+  padding-top: 60px;
+  padding-bottom: 0px;
+
+  position: relative;
+}
+
+.titulo::before {
+  content: "";
+  width: 80px;
+  height: 5px;
+  border-radius: 5px;
+
+  background: linear-gradient(to right, red, rgb(134, 0, 0));
+
+  position: absolute;
+  bottom: 60px;
+
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#parrafo {
+  text-align: center;
+  font-size: 18px;
+  color: #eae0e08e;
+  margin-bottom: 40px;
+}
+
+#formulario {
+  width: 100%;
+  max-width: 500px;
+
+  padding: 35px;
+  margin: auto;
+
+  border: 1px solid #51586d;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: linear-gradient(to bottom right, #272c36 0%, #14171c 70%);
+}
+
+#formulario input {
+  height: 45px;
+  padding: 0 15px;
+
+  margin-bottom: 20px;
+  border-radius: 10px;
+
+  color: white;
+  font-size: 16px;
+
+  border: 1px solid #49515c;
+  background-color: #14171de7;
+  transition: 0.3s;
+}
+
+#formulario label {
+  font-size: 16px;
+  font-weight: 600;
+
+  padding-bottom: 7px;
+  font-family: "Outfit", sans-serif;
+}
+
+#formulario input:focus {
+  border-color: #df0400;
+  outline: none;
+}
+
+/*titulo y parrafo dentro del form*/
+#formulario h3 {
+  font-family: "Outfit", sans-serif;
+  font-size: 30px;
+}
+
+#formulario p {
+  padding-bottom: 35px;
+  font-size: 17px;
+  font-family: "Outfit", sans-serif;
+
+  color: #eae0e08e;
+}
+
+#boton {
+  padding: 15px;
+  border-radius: 10px;
+
+  border-style: none;
+  background-color: #cd0100;
+  color: white;
+
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
 }
 
 /*media query pagina principal*/
