@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PADDOCK! - noticias</title>
     <link rel="stylesheet" href="styles.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+    <script src="form.js" defer></script>
   </head>
   <body>
     <header>
@@ -28,13 +33,19 @@
         <input id="nombre" type="text" name="nombre" placeholder="Ingresa tu nombre" required />
 
         <label for="correo">Correo Electronico:</label>
-        <input id="correo" type="email" name="correo" placeholder="ejemplo@mail.com" required />
+        <input id="correo" name="correo" placeholder="ejemplo@mail.com" required />
 
         <label for="telefono">Telefono:</label>
-        <input id="telefono" type="tel" name="telefono" placeholder="Ej: 266 4012345" />
+        <input id="telefono" name="telefono" placeholder="Ej: 266 4012345" />
 
         <button type="submit" id="boton">Suscribirme</button>
       </form>
+
+      <div id="mensaje">
+        <p id="mensaje-nombre"></p>
+        <p id="mensaje-correo"></p>
+        <p id="mensaje-telefono"></p>
+      </div>
     </main>
 
     <footer>

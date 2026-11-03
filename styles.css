@@ -24,8 +24,6 @@ nav {
   gap: 25px;
   padding: 18px;
   background-color: rgba(86, 86, 117, 0.08);
-
-  font-family: "Outfit", sans-serif;
 }
 
 nav a {
@@ -33,7 +31,7 @@ nav a {
 
   cursor: pointer;
   font-size: 20px;
-  font-family: "Outfit";
+  font-family: sans-serif;
   text-decoration: none;
   transition: 0.25s;
 
@@ -293,7 +291,7 @@ footer a:hover {
   height: 5px;
   border-radius: 5px;
 
-  background: linear-gradient(to right, red, rgb(134, 0, 0));
+  background: linear-gradient(to right, rgb(253, 9, 9), rgb(174, 2, 2));
 
   position: absolute;
   top: 80px;
@@ -397,6 +395,7 @@ footer a:hover {
   border-radius: 5px;
 
   background: linear-gradient(to right, red, rgb(134, 0, 0));
+  box-shadow: 0px 0px 30px rgba(255, 0, 0, 0.404);
 
   position: absolute;
   bottom: 60px;
@@ -448,7 +447,7 @@ footer a:hover {
   font-weight: 600;
 
   padding-bottom: 7px;
-  font-family: "Outfit", sans-serif;
+  font-family: sans-serif;
 }
 
 #formulario input:focus {
@@ -478,11 +477,48 @@ footer a:hover {
   background-color: #cd0100;
   color: white;
 
-  font-family: "Outfit", sans-serif;
   font-size: 16px;
   font-weight: 600;
 
   cursor: pointer;
+
+  transition: 0.3s;
+}
+
+#boton:hover {
+  background-color: #ff0000;
+}
+
+#mensaje {
+  max-width: 400px;
+  height: 150px;
+
+  margin: 20px auto;
+  padding: 30px;
+
+  border: 1px solid #51586d;
+  border-radius: 15px;
+
+  text-align: center;
+
+  background: linear-gradient(to bottom right, #272c36 0%, #14171c 70%);
+
+  display: none;
+}
+
+#mensaje.visible {
+  display: block;
+}
+
+#mensaje p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#mensaje-nombre {
+  font-size: 20px;
+  font-weight: 600;
 }
 
 /*media query pagina principal*/

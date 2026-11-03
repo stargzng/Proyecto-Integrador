@@ -31,6 +31,9 @@ const imagenes = [
 
 
 
+btnSiguiente.addEventListener("click", avanzar);
+btnAnterior.addEventListener("click", retroceder);
+
 
 function avanzar() {
     indice++
@@ -54,6 +57,7 @@ function retroceder() {
 }
 
 
-btnSiguiente.addEventListener("click", avanzar);
-btnAnterior.addEventListener("click", retroceder);
+
+
+
 
