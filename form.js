@@ -5,9 +5,7 @@ const inputCorreo = document.getElementById("correo");
 const inputTel = document.getElementById("telefono");
 
 const mensaje = document.getElementById("mensaje");
-const mensajeNombre = document.getElementById("mensaje-nombre");
-const mensajeCorreo = document.getElementById("mensaje-correo");
-const mensajeTelefono = document.getElementById("mensaje-telefono");
+
 
 
 const patronTelefono = /^[0-9]{10,15}$/;
@@ -27,12 +25,32 @@ function validarFormulario(event) {
     const correo = inputCorreo.value.trim();
     const telefono = inputTel.value.trim();
 
+    const correoValido = validarCorreo(correo);
+    const nombreValido = validarNombre(nombre);
+    const telefonoValido = validarTel(telefono);
 
-    if (validarCorreo(correo) && validarNombre(nombre) && validarTel(telefono)) {
+
+    if (correoValido && nombreValido && telefonoValido) {
+        mensaje.replaceChildren();
+
         mensaje.classList.add("visible");
-        mensajeNombre.textContent = `Gracias por registrarte ${nombre}!`;
-        mensajeCorreo.textContent = `Correo: ${correo}`;
-        mensajeTelefono.textContent = `Telefono: ${telefono}`;
+
+        const parrafoNombre = document.createElement("p");
+        parrafoNombre.textContent = `Gracias por registrarte, ${nombre}`;
+        mensaje.appendChild(parrafoNombre);
+
+        const parrafoCorreo = document.createElement("p");
+        parrafoCorreo.textContent = `Correo: ${correo}`;
+        mensaje.appendChild(parrafoCorreo);
+
+        const parrafoTel = document.createElement("p");
+        parrafoTel.textContent = `Telefono: ${telefono}`
+        mensaje.appendChild(parrafoTel);
+
+        formulario.reset();
+
+    } else {
+        mensaje.classList.remove("visible");
     }
 
 }
