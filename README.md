@@ -40,7 +40,7 @@ Para ejecutar y acceder al codigo completo del sitio web podes clonar el reposit
 
 El proyecto estará disponible mediante GitHub Pages.
 
-**Enlace:** pendiente de publicación.
+**Enlace:** https://stargzng.github.io/Proyecto-Integrador/
 
 ## Autor
 
