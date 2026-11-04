@@ -15,14 +15,18 @@ html {
 
 body {
   min-height: 100vh;
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
+main {
+  flex: 1;
+}
 /* barra de navegacion: espaciado, padding, color, hover (todas las paginas)*/
 nav {
   display: flex;
   gap: 25px;
-  padding: 18px;
+  padding: 15px;
   background-color: rgba(86, 86, 117, 0.08);
 }
 
@@ -50,13 +54,14 @@ nav a:hover {
 .marcador:after {
   content: "";
   width: 100%;
-  height: 5px;
+  height: 4px;
 
-  border-radius: 0px;
-  background-color: #df0400;
+  border-radius: 1px;
+  background: linear-gradient(to left, rgb(225, 1, 1), rgb(150, 1, 1));
 
   position: absolute;
-  top: 20px;
+  top: 21px;
+  left: 0;
 }
 
 /*===============PAGINA PRINCIPAL=================*/
@@ -245,9 +250,6 @@ nav a:hover {
 
 /*footer, posicionamiento, contenido (todas las paginas)*/
 footer {
-  position: relative;
-  bottom: 0;
-
   padding: 20px;
   margin-top: 90px;
   background-color: rgba(88, 88, 88, 0.13);
@@ -272,7 +274,7 @@ footer a:hover {
 /*===============PAGINA NOTICIAS=================*/
 
 /*contenedor de las noticias*/
-#noticias > h2 {
+#titulo-seccion {
   text-align: center;
   font-size: 40px;
   padding-top: 30px;
@@ -283,7 +285,7 @@ footer a:hover {
   display: block;
 }
 
-#noticias > h2::before {
+#titulo-seccion::before {
   content: "";
   width: 180px;
   height: 5px;
@@ -527,6 +529,7 @@ footer a:hover {
 }
 
 /*media query's*/
+
 @media (max-width: 670px) {
   /*============= PAGINA PRINCIPAL =============*/
   nav {
@@ -538,9 +541,14 @@ footer a:hover {
     font-size: 16px;
   }
 
+  .marcador:after {
+    height: 3px;
+    top: 17px;
+    left: 0;
+  }
+
   footer {
     padding: 14px;
-    margin-top: 60px;
   }
 
   footer a {
@@ -617,13 +625,13 @@ footer a:hover {
 
   /*============= PAGINA NOTICIAS =============*/
 
-  #noticias > h2 {
+  #titulo-seccion {
     font-size: 30px;
     padding-top: 30px;
     padding-bottom: 30px;
   }
 
-  #noticias > h2::before {
+  #titulo-seccion::before {
     content: "";
     width: 110px;
     top: 65px;
@@ -691,10 +699,9 @@ footer a:hover {
   }
 
   #formulario {
+    width: calc(100% - 40px);
     min-width: 0px;
     padding: 20px;
-
-    margin: 0px 10px;
   }
 
   #formulario input {
@@ -726,9 +733,7 @@ footer a:hover {
   /*mensaje de SUSCRIPCION*/
   #mensaje {
     min-width: 0px;
-    height: 150px;
-
-    margin: 20px auto;
+    width: calc(100% - 40px);
     padding: 20px;
   }
 

@@ -4,31 +4,31 @@ const imagen = document.querySelector("#carruselImagenes img");
 
 
 let indice = 0;
-const imagenes = [
-    "./img/MV.png",
-    "./img/FC.png",
-    "./img/OP.png",
-    "./img/KA.png",
-    "./img/LN.png",
-    "./img/GR.png",
-    "./img/AA.png",
-    "./img/EO.png",
-    "./img/OB.png",
-    "./img/LL.png",
-    "./img/LH.png",
-    "./img/AL.png",
-    "./img/NH.png",
-    "./img/VB.png",
-    "./img/SP.png",
-    "./img/PG.png",
-    "./img/GB.png",
-    "./img/IH.png",
-    "./img/LC.png",
-    "./img/CS.png",
-    "./img/FA.png",
-    "./img/CL.png",
-]
 
+const imagenes = [
+    { src: "./img/MV.png", alt: "Max Verstappen" },
+    { src: "./img/FC.png", alt: "Franco Colapinto" },
+    { src: "./img/OP.png", alt: "Oscar Piastri" },
+    { src: "./img/KA.png", alt: "Kimi Antonelli" },
+    { src: "./img/LN.png", alt: "Lando Norris" },
+    { src: "./img/GR.png", alt: "George Russell" },
+    { src: "./img/AA.png", alt: "Alexander Albon" },
+    { src: "./img/EO.png", alt: "Esteban Ocon" },
+    { src: "./img/OB.png", alt: "Olliver Bearman" },
+    { src: "./img/LL.png", alt: "Liam Lawson" },
+    { src: "./img/LH.png", alt: "Lewis Hamilton" },
+    { src: "./img/AL.png", alt: "Arvid Lindblad" },
+    { src: "./img/NH.png", alt: "Nico Hülkenberg" },
+    { src: "./img/VB.png", alt: "Valtteri Bottas" },
+    { src: "./img/SP.png", alt: "Sergio Perez" },
+    { src: "./img/PG.png", alt: "Pierre Gasly" },
+    { src: "./img/GB.png", alt: "Gabriel Bortoleto" },
+    { src: "./img/IH.png", alt: "Isaack Hadjar" },
+    { src: "./img/LC.png", alt: "Lance Stroll" },
+    { src: "./img/CS.png", alt: "Carlos Sainz" },
+    { src: "./img/FA.png", alt: "Fernando Alonso" },
+    { src: "./img/CL.png", alt: "Charles Leclerc" },
+]
 
 
 btnSiguiente.addEventListener("click", avanzar);
@@ -42,7 +42,8 @@ function avanzar() {
         indice = 0
     }
 
-    imagen.src = imagenes[indice];
+    imagen.src = imagenes[indice].src;
+    imagen.alt = imagenes[indice].alt;
 }
 
 
@@ -53,7 +54,9 @@ function retroceder() {
         indice = imagenes.length - 1;
     }
 
-    imagen.src = imagenes[indice];
+    imagen.src = imagenes[indice].src;
+    imagen.alt = imagenes[indice].alt;
+
 }
 
 
