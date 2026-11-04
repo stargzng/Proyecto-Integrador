@@ -7,7 +7,6 @@ const inputTel = document.getElementById("telefono");
 const mensaje = document.getElementById("mensaje");
 
 
-
 const patronTelefono = /^[0-9]{10,15}$/;
 const patronCorreo = /^[^\s@]+@[a-z]{2,}\.[a-z]+$/;
 const patronNombre = /^[a-zA-Z\s]{3,30}$/;
@@ -19,7 +18,6 @@ formulario.addEventListener("submit", validarFormulario)
 function validarFormulario(event) {
 
     event.preventDefault();
-
 
     const nombre = inputNombre.value.trim();
     const correo = inputCorreo.value.trim();

@@ -8,7 +8,6 @@ html {
   font-family: sans-serif;
   color: #eae2e0;
   background: linear-gradient(to bottom right, #272b36 0%, #17191d 45%, #0b0c0f 100%);
-  /*background-image: radial-gradient(circle at top left, rgb(100, 95, 85) 0%, rgb(45, 43, 40) 35%, rgb(19, 19, 19) 75%);*/
 
   scroll-behavior: smooth;
 }
@@ -22,6 +21,7 @@ body {
 main {
   flex: 1;
 }
+
 /* barra de navegacion: espaciado, padding, color, hover (todas las paginas)*/
 nav {
   display: flex;
@@ -64,9 +64,32 @@ nav a:hover {
   left: 0;
 }
 
+/*footer, posicionamiento, color y tamaño de enlaces (todas las paginas)*/
+footer {
+  padding: 20px;
+  margin-top: 90px;
+  background-color: rgba(88, 88, 88, 0.13);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+footer a {
+  opacity: 50%;
+  color: #eae2e0;
+  text-decoration: none;
+
+  transition: 0.5s ease;
+}
+
+footer a:hover {
+  opacity: 100%;
+  color: #eae2e0;
+}
+
 /*===============PAGINA PRINCIPAL=================*/
 
-/* logotipo-titulo, centrado, tamaño de textos (h1 y p), margen/espaciado, hover */
+/* logotipo, centrado y tamaño de textos (h1 y p), margen/espaciado, hover */
 #bienvenida {
   margin-top: 90px;
   margin-bottom: 40px;
@@ -84,7 +107,7 @@ nav a:hover {
 }
 
 #bienvenida h1:hover {
-  transform: scale(1.025); /*transform no modifica el espacio que el elemento ocupa, a diferencia de text-size*/
+  transform: scale(1.025);
 }
 
 #bienvenida p {
@@ -98,7 +121,7 @@ nav a:hover {
   color: #df0400;
 }
 
-/* seccion de las tarjetas <a>*/
+/* seccion de tarjetas <a>*/
 .tarjetas {
   max-width: 1200px;
   margin: auto;
@@ -151,7 +174,6 @@ nav a:hover {
 }
 
 /*carrusel*/
-
 #carrusel {
   margin: 50px auto;
   padding: 50px;
@@ -188,6 +210,7 @@ nav a:hover {
   transform: translateX(-50%);
 }
 
+/*es el contenedor de las imagenes...*/
 #carruselImagenes {
   background-color: rgba(250, 235, 215, 0.174);
   width: 100%;
@@ -218,7 +241,7 @@ nav a:hover {
   width: 40px;
   aspect-ratio: 1/1;
   padding: 10px;
-  border-radius: 50%;
+  border-radius: 100%;
   cursor: pointer;
 
   background-color: rgba(250, 235, 215, 0.174);
@@ -248,32 +271,8 @@ nav a:hover {
   top: 45%;
 }
 
-/*footer, posicionamiento, contenido (todas las paginas)*/
-footer {
-  padding: 20px;
-  margin-top: 90px;
-  background-color: rgba(88, 88, 88, 0.13);
-
-  display: flex;
-  justify-content: space-between;
-}
-
-footer a {
-  opacity: 50%;
-  color: #eae2e0;
-  text-decoration: none;
-
-  transition: 0.5s ease;
-}
-
-footer a:hover {
-  opacity: 100%;
-  color: #eae2e0;
-}
-
 /*===============PAGINA NOTICIAS=================*/
 
-/*contenedor de las noticias*/
 #titulo-seccion {
   text-align: center;
   font-size: 40px;
@@ -300,6 +299,7 @@ footer a:hover {
   transform: translateX(-50%);
 }
 
+/*contenedor de todas las noticias existentes */
 #contenedor-noticias {
   max-width: 1200px;
 
@@ -311,6 +311,7 @@ footer a:hover {
   flex-wrap: wrap;
 }
 
+/*contenedor de cada noticia indivudual*/
 .noticia {
   background-color: rgba(88, 88, 88, 0.13);
   border-radius: 10px;
@@ -329,16 +330,17 @@ footer a:hover {
   transition: all 0.5s ease-in-out;
 }
 
+.noticia:hover {
+  transform: scale(1.02);
+  background: linear-gradient(to bottom right, #363d4fdd 0%, #26292eca 45%, #303646c6 100%);
+}
+
+/*Posicionamiento y tamaño de las imagenes*/
 .contenedor-img {
   aspect-ratio: 16/9;
 
   border-radius: 10px;
   overflow: hidden;
-}
-
-.noticia:hover {
-  transform: scale(1.02);
-  background: linear-gradient(to bottom right, #363d4fdd 0%, #26292eca 45%, #303646c6 100%);
 }
 
 .contenedor-img img {
@@ -351,7 +353,7 @@ footer a:hover {
   object-position: center;
 }
 
-/*elementos de cada noticia, titulo y parrafo*/
+/*titulo y parrafo de cada noticia*/
 .noticia h2 {
   font-size: 40px;
 
@@ -412,8 +414,7 @@ footer a:hover {
   margin-bottom: 40px;
 }
 
-/*FORMULARIO (CONTENEDOR)*/
-
+/*titulo y parrafo dentro del formulario*/
 #formulario h3 {
   font-size: 30px;
 
@@ -429,6 +430,7 @@ footer a:hover {
   font-family: "Outfit", sans-serif;
 }
 
+/*contenedor del formulario*/
 #formulario {
   width: 100%;
   max-width: 500px;
@@ -445,6 +447,7 @@ footer a:hover {
   background: linear-gradient(to bottom right, #272c36 0%, #14171c 70%);
 }
 
+/*inputs y labels del formulario*/
 #formulario input {
   height: 45px;
   padding: 0 15px;
@@ -529,8 +532,7 @@ footer a:hover {
 }
 
 /*media query's*/
-
-@media (max-width: 670px) {
+@media (max-width: 620px) {
   /*============= PAGINA PRINCIPAL =============*/
   nav {
     gap: 20px;
@@ -742,5 +744,3 @@ footer a:hover {
     margin-bottom: 5px;
   }
 }
-
-/* luuxcascuello@gmail.com */
